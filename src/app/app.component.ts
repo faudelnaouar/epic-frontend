@@ -11,7 +11,8 @@ export class AppComponent {
   constructor(private auth: AuthService, private router: Router) { }
 
   logout() {
-    this.auth.logout();
-    this.router.navigate(['login']);
-  }
+    // this.auth.logout();
+     this.router.navigate(['login']);
+     localStorage.clear();
+   }
 }

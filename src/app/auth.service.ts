@@ -13,6 +13,10 @@ export class AuthService {
       
   }
 
+  registerUser(body): Observable<any> {
+    return this.http.post<any>(this.baseUrl +'users/add_user', body);
+  }
+
   logout() {
     localStorage.removeItem('access_token');
   }

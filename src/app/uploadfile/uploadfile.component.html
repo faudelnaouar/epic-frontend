@@ -1,0 +1,23 @@
+<br><br><br>
+<div class="container " appDnd (fileDropped)="onFileDropped($event)">
+  <input type="file" #fileDropRef id="fileDropRef" multiple (change)="fileBrowseHandler($event.target.files)" />
+  <img src="../../assets/ic-upload-file.svg.url" alt="">
+  <h3 style="color: white;">Glisser déposer</h3>
+  <h3 style="color: white;">ou bien</h3>
+  <label for="fileDropRef">Parcourir</label>
+</div>
+<div class="files-list">
+  <div class="single-file" *ngFor="let file of files; let i = index">
+    <img src="../../assets/ic-file.svg" width="45px" alt="file">
+    <div class="info">
+      <h4 class="name">
+        {{ file?.name }}
+      </h4>
+      <p class="size">
+        {{ formatBytes(file?.size) }}
+      </p>
+      <app-progress [progress]="file?.progress"></app-progress>
+    </div>
+    <img src="../../assets/ic-delete-file.svg" class="delete" width="20px" alt="file" (click)="deleteFile(i)">
+  </div>
+</div>

@@ -1,0 +1,18 @@
+[req]
+default_bis - 2048
+prompt = no
+default_md = sha256
+x509_extensions = v3_req
+distinguished_name = distinguished_name
+[dn]
+C - IN
+ST = India
+L = India
+o - Localhost Org
+OU = Localhost Org Unit
+emailAdress = codepossibility@gmail.com
+CN - localhost
+[V3_names]
+SubjectAltName = @alt_names
+[alt_names]
+DNS.1 = localhost

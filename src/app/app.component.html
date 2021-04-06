@@ -1,10 +1,30 @@
+<div class="background-color">
 <div class="container-fluid">
-  <h1>Angular Todo List</h1>
-  <nav class="nav nav-pills">
-    <a class="nav-link" routerLink="todos" routerLinkActive="active" *ngIf="auth.loggedIn">Todo List</a>
-    <a class="nav-link" routerLink="users" routerLinkActive="active" *ngIf="auth.loggedIn">Users</a>
-    <a class="nav-link" routerLink="login" routerLinkActive="active" *ngIf="!auth.loggedIn">Login</a>
-    <a class="nav-link" (click)="logout()" href="#" *ngIf="auth.loggedIn">Logout</a>
-  </nav>
+  
+  <div *ngIf="auth.loggedIn" class="row" style="background-image: linear-gradient(to right, #000000d9, #333d56a1);">
+    <div class="col-12" >
+      <nav class="nav nav-pills">
+        <div class="col-4 " style="border-radius: 27px;margin-top: 8px"><h1 *ngIf="auth.loggedIn" style="color: #b0a6a6;" >EPIC</h1></div>
+        <div class="col-2">
+          <a style="color: white; font-style: italic; border: solid; background: #80808061; border-radius: 27px;margin-top: 8px"
+            class="nav-link" routerLink="uploadfile" routerLinkActive="active" *ngIf="auth.loggedIn">Charger un
+            document</a>
+        </div>
+        <div class="col-2">
+          <a style="color: white; font-style: italic; border: solid; background: #80808061; border-radius: 27px;margin-top: 8px"
+            class="nav-link" routerLink="users" routerLinkActive="active" *ngIf="auth.loggedIn">Les utilisateurs</a>
+        </div>
+        <div class="col-2">
+          <a style="color: white; font-style: italic; border: solid; background: #80808061; border-radius: 27px;margin-top: 8px"
+            class="nav-link" routerLink="register" routerLinkActive="active" *ngIf="auth.loggedIn">Ajouter un enseignant</a>
+        </div>
+        <div class="col-2">
+          <a style="color: white; font-style: italic; border: solid; background: #f36f6f61; border-radius: 27px;margin-top: 8px"
+            class="nav-link" (click)="logout()" href="#" *ngIf="auth.loggedIn">Se déconnecter</a>
+        </div>
+      </nav>
+    </div>
+  </div>
   <router-outlet></router-outlet>
-</div>
+
+</div></div>

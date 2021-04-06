@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { JwtModule } from '@auth0/angular-jwt';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,24 +14,31 @@ import { LoginComponent } from './login/login.component';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 import { RegisterComponent } from './register/register.component';
-
+//import {InputTextModule} from 'primeng/inputtext';
 export function tokenGetter() {
   return localStorage.getItem('access_token');
 }
-
+import { UploadfileComponent } from './uploadfile/uploadfile.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ProgressComponent } from './progress/progress.component';
+//import {TableModule} from 'primeng/table';
 @NgModule({
   declarations: [ 
     AppComponent,
     TodoListComponent,
     UserListComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    UploadfileComponent,
+    NavbarComponent,
+    ProgressComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     // JwtModule.forRoot({
     //   config: {
     //     tokenGetter: tokenGetter,
@@ -39,6 +46,7 @@ export function tokenGetter() {
     //     blacklistedRoutes: ['localhost:5000/users/login']
     //   }
     // })
+    
   ],
   providers: [
     TodoService,
