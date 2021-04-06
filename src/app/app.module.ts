@@ -21,6 +21,7 @@ export function tokenGetter() {
 import { UploadfileComponent } from './uploadfile/uploadfile.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProgressComponent } from './progress/progress.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 //import {TableModule} from 'primeng/table';
 @NgModule({
   declarations: [ 
@@ -31,7 +32,8 @@ import { ProgressComponent } from './progress/progress.component';
     RegisterComponent,
     UploadfileComponent,
     NavbarComponent,
-    ProgressComponent
+    ProgressComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,
